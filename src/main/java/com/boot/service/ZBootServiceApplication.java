@@ -14,12 +14,12 @@ import org.springframework.session.data.redis.config.annotation.web.http.EnableR
 @EnableRedisHttpSession
 @SpringBootApplication
 @EnableDubboConfiguration
-public class Z_Boot_ServiceApplication {
+public class ZBootServiceApplication {
 
-    public static final Logger logger = LoggerFactory.getLogger(Z_Boot_ServiceApplication.class);
+    public static final Logger logger = LoggerFactory.getLogger(ZBootServiceApplication.class);
 
     public static void main(String[] args) {
-        ApplicationContext context = SpringApplication.run(Z_Boot_ServiceApplication.class, args);
+        ApplicationContext context = SpringApplication.run(ZBootServiceApplication.class, args);
         BootQueueSender sender = (BootQueueSender) context.getBean("bootQueueSender");
         sender.send();
         logger.info("======从QueueDestination发送消息成功======");

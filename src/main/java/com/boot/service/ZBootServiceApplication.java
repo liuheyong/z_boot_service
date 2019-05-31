@@ -19,7 +19,10 @@ public class ZBootServiceApplication {
     public static final Logger logger = LoggerFactory.getLogger(ZBootServiceApplication.class);
 
     public static void main(String[] args) {
-        ApplicationContext context = SpringApplication.run(ZBootServiceApplication.class, args);
+        SpringApplication springApplication = new SpringApplication(ZBootServiceApplication.class);
+        //关闭命令行设置环境属性
+        springApplication.setAddCommandLineProperties(false);
+        ApplicationContext context = springApplication.run(args);
         BootQueueSender sender = (BootQueueSender) context.getBean("bootQueueSender");
         sender.send();
         logger.info("======从QueueDestination发送消息成功======");

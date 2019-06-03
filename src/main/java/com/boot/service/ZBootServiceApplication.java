@@ -1,6 +1,7 @@
 package com.boot.service;
 
 import com.alibaba.dubbo.spring.boot.annotation.EnableDubboConfiguration;
+import com.boot.service.RedisCache.SpringBeanUtil;
 import com.boot.service.activemqsender.BootQueueSender;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,6 +24,9 @@ public class ZBootServiceApplication {
         //关闭命令行设置环境属性
         springApplication.setAddCommandLineProperties(false);
         ApplicationContext context = springApplication.run(args);
+        //赋值ApplicationContext,以便随时手动获取bean
+        SpringBeanUtil.setApplicationContext(context);
+        logger.info("======ApplicationContext======" + SpringBeanUtil.getApplicationContext());
         BootQueueSender sender = (BootQueueSender) context.getBean("bootQueueSender");
         sender.send();
         logger.info("======从QueueDestination发送消息成功======");

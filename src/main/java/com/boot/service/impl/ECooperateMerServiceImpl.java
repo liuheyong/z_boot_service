@@ -14,6 +14,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @author: LiuHeYong
@@ -53,14 +54,14 @@ public class ECooperateMerServiceImpl implements ECooperateMerService {
                     list = (List<ECooperateMer>) redisTemplate.opsForValue().get("eCooperateMerList");
                     if (list == null) {//判断list是否为空如果为空表示为第一批并发请求中的第一个
                         list = eCooperateMerMapper.queryECooperateMerListPage();
-                        redisTemplate.opsForValue().set("eCooperateMerList", list);
-                        System.out.println("从数据库中获取的数据！");
+                        redisTemplate.opsForValue().set("eCooperateMerList", list,60, TimeUnit.SECONDS);
+                        System.out.println("从数据库中获取的数据");
                     } else {
-                        System.out.println("从缓存中获取数据！");
+                        System.out.println("从缓存中获取数据");
                     }
                 }
             } else {
-                System.out.println("从缓存中获取数据！");
+                System.out.println("从缓存中获取数据");
             }
             return list;
         } catch (Exception e) {

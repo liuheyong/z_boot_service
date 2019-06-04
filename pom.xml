@@ -30,6 +30,11 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-cache</artifactId>
         </dependency>
+        <!--boot发送mail-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-mail</artifactId>
+        </dependency>
         <!--引⼊test依赖-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -42,6 +47,11 @@
             <artifactId>flyway-core</artifactId>
             <version>5.0.3</version>
         </dependency>-->
+        <!--引⼊actuator健康检查-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
         <!--引⼊jdbc依赖-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -87,10 +97,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-redis</artifactId>
             <version>${data-redis.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-redis</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.session</groupId>
@@ -149,6 +155,9 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <executable>true</executable>
+                </configuration>
             </plugin>
         </plugins>
         <resources>

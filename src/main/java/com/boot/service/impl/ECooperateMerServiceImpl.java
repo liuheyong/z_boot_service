@@ -41,7 +41,7 @@ public class ECooperateMerServiceImpl implements ECooperateMerService {
 
     @Override
     public QueryECooperateMerResponse queryECooperateMerListPage(ECooperateMer eCooperateMer) throws Exception {
-        QueryECooperateMerResponse response = null;
+        QueryECooperateMerResponse response = new QueryECooperateMerResponse();
         try {
             //使用String格式化Redis的key 否则Key的可读性并不好！
             RedisSerializer redisSerializer = new StringRedisSerializer();

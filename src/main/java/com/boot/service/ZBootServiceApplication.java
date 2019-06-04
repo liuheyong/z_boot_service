@@ -7,6 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.ApplicationContext;
 import org.springframework.scheduling.annotation.EnableAsync;
@@ -15,7 +16,8 @@ import org.springframework.session.data.redis.config.annotation.web.http.EnableR
 @EnableCaching
 @EnableAsync
 @EnableRedisHttpSession
-@SpringBootApplication
+//剔除某些自动化配置
+@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
 @EnableDubboConfiguration
 public class ZBootServiceApplication {
 

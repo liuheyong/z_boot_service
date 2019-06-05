@@ -75,6 +75,9 @@
         ORDER BY COOPERATE_MER_SEQ DESC
     </select>
 
+    <!--<cache type="com.boot.service.RedisCache.SecondRedisCache" eviction="FIFO" flushInterval="60000" readOnly="true"
+           size="1024"/>-->
+
     <!--<select id="queryNewECooperateMer" resultMap="BaseResultMap" parameterType="com.bee.odm.domain.ECooperateMerEntity" >
         SELECT *  FROM E_COOPERATE_MER  WHERE AGENT_MER_SEQ = #{agentMerSeq,jdbcType=VARCHAR}  ORDER BY E_ORDER DESC LIMIT 1
     </select>

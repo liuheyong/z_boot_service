@@ -3,7 +3,6 @@ package com.boot.service;
 import com.alibaba.dubbo.spring.boot.annotation.EnableDubboConfiguration;
 import com.boot.service.RedisCache.SpringBeanUtil;
 import com.boot.service.activemqsender.BootQueueSender;
-import com.boot.service.rabbitmqsender.RabbitMQSender;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
@@ -35,8 +34,8 @@ public class ZBootServiceApplication {
         BootQueueSender activeMQSender = (BootQueueSender) context.getBean("bootQueueSender");
         activeMQSender.send();
         logger.info("======ActiveMQ往QueueDestination发送消息成功======");
-        RabbitMQSender rabbitMQSender = (RabbitMQSender) context.getBean("rabbitMQSender");
+        /*RabbitMQSender rabbitMQSender = (RabbitMQSender) context.getBean("rabbitMQSender");
         rabbitMQSender.send();
-        logger.info("======RabbitMQ往RabbitMQQueueDestination发送消息成功======");
+        logger.info("======RabbitMQ往RabbitMQQueueDestination发送消息成功======");*/
     }
 }

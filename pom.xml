@@ -149,10 +149,10 @@
             <artifactId>spring-boot-starter-activemq</artifactId>
         </dependency>
         <!-- 引入RabbitMQ依赖 -->
-        <dependency>
+        <!--<dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-amqp</artifactId>
-        </dependency>
+        </dependency>-->
     </dependencies>
 
     <build>

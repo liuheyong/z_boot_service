@@ -8,7 +8,7 @@ package com.boot.service.rabbitmqsender;
 /*@Component
 public class RabbitMQSender {
 
-    private static final Logger logger = LoggerFactory.getLogger(RabbitMQSender.class);
+    private templates final Logger logger = LoggerFactory.getLogger(RabbitMQSender.class);
 
     @Autowired
     private AmqpTemplate rabbitTemplate;

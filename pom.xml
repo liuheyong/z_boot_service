@@ -86,9 +86,9 @@
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
-        <!--commons-->
+        <!--com.alibabacloud.commons-->
         <dependency>
-            <groupId>com.boot.commons</groupId>
+            <groupId>com.boot.com.alibabacloud.commons</groupId>
             <artifactId>z_boot_commons</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>

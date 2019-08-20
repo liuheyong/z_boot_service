@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.boot.service.mapper.ECooperateMerMapper">
-    <resultMap id="BaseResultMap" type="com.boot.com.alibabacloud.commons.dto.ECooperateMer">
+    <resultMap id="BaseResultMap" type="com.boot.commons.dto.ECooperateMer">
         <id column="COOPERATE_MER_SEQ" property="cooperateMerSeq" jdbcType="VARCHAR"/>
         <result column="AGENT_MER_SEQ" property="agentMerSeq" jdbcType="VARCHAR"/>
         <result column="MER_NAME" property="merName" jdbcType="VARCHAR"/>
@@ -75,7 +75,7 @@
         ORDER BY COOPERATE_MER_SEQ DESC
     </select>
 
-    <!--<cache type="com.boot.service.RedisCache.SecondRedisCache" eviction="FIFO" flushInterval="60000" readOnly="true"
+    <!--<cache type="com.boot.client.RedisCache.SecondRedisCache" eviction="FIFO" flushInterval="60000" readOnly="true"
            size="1024"/>-->
 
     <!--<select id="queryNewECooperateMer" resultMap="BaseResultMap" parameterType="com.bee.odm.domain.ECooperateMerEntity" >

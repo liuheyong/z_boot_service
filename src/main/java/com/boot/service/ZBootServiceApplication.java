@@ -18,7 +18,7 @@ import org.springframework.session.data.redis.config.annotation.web.http.EnableR
 //剔除某些自动化配置
 @SpringBootApplication
 @EnableDubboConfiguration
-//@MapperScan(basePackages = "com.boot.service.mapper")
+//@MapperScan(basePackages = "com.boot.client.mapper")
 public class ZBootServiceApplication {
 
     public static final Logger logger = LoggerFactory.getLogger(ZBootServiceApplication.class);
